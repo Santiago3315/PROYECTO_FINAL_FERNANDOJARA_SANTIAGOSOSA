@@ -1,0 +1,27 @@
+#Script sqlite3
+
+#Paso 1: Comando para abrir la base de datos desde consola
+.open dbproductos.db
+
+#Paso 2: Comando para crear la base de datos desde consola 
+#(En este apartado cree la base de datos desde el codigo pyhon)
+CREATE TABLE Productos(
+        ID        tinyint   PRIMARY KEY  NOT NULL,
+        Nombre    TEXT               NOT NULL,
+        Marca     TEXT               NOT NULL,
+        Costo     FLOAT              NOT NULL,
+        Almacen   tinyint                NOT NULL
+        );
+
+#Paso 3: Comando Para Insertar datos desde consola 
+#(En este apartado se insertan los datos en la App kivy que realice) 
+INSERT INTO Productos(ID, Nombre, Marca, Costo, Almacen) VALUES (1,'Doritos','Sabritas',12,20);
+INSERT INTO Productos(ID, Nombre, Marca, Costo, Almacen) VALUES (2,'Cheetos','Sabritas',12,33);
+
+#Paso 4: Con este comando puedo ver la base de datos que se creo directamente de mi codigo python
+.schema
+
+#Parte 5: Comando para ver lo que hay dentro de mi tabla Productos.
+SELECT * FROM Productos;
+1|Doritos|Sabritas|12.0|20
+2|Cheetos|Sabritas|12.0|33
